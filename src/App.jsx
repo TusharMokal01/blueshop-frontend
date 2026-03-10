@@ -8,9 +8,11 @@ import CartDrawer from "./components/CartDrawer"
 import ProtectedRoute from "./components/ProtectedRoute"
 
 import Home from "./pages/Home"
+import Products from "./pages/Products"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Checkout from "./pages/Checkout"
+import Footer from "./components/Footer.jsx"
 
 export default function App() {
   return (
@@ -26,6 +28,7 @@ export default function App() {
               <div className="pt-24 px-6 max-w-7xl mx-auto">
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/products" element={<Products />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/checkout" element={<Checkout />} />
@@ -33,7 +36,7 @@ export default function App() {
                     path="/dashboard"
                     element={
                       <ProtectedRoute>
-                        <div className="text-3xl font-bold">Dashboard (Protected)</div>
+                        <div className="text-3xl font-bold">Dashboard</div>
                       </ProtectedRoute>
                     }
                   />
@@ -43,6 +46,7 @@ export default function App() {
           </Router>
         </ToastProvider>
       </CartProvider>
+      < Footer/>
     </AuthProvider>
   )
 }
